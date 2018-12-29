@@ -37,4 +37,12 @@
 	3. Turning ETags Off
 	
 4. Disable Image Hotlinking
+
+	Every time when someone visits that webpage, images will be loaded from your server.
+	This is known as Image Hotlinking.
+	
 5. Activate mod_pagespeed
+
+	Furthermore, this Htaccess trick to increase page speed
+	and to optimize your website is especially relevant and works well with Apache servers.
+	Mod_pagespeed module was developed by Google to increase page speed of websites.
