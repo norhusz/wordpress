@@ -1,0 +1,7 @@
+# DISABLE IMAGE HOTLINKING START
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourdomain.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?google.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif)$ – [NC,F,L]
+# DISABLE IMAGE HOTLINKING END
