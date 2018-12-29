@@ -1,0 +1,133 @@
+# BEGIN GZIP COMPRESSION
+<IfModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+# END GZIP COMPRESSION
+
+Unfolding Technologies
+
+    Home
+    About
+    Write for Us
+
+Best Social Share Plugins for WordPress
+How to Add Author Box in WordPress with or without Plugin - Schema Optimized
+How to Add Author Box in WordPress {with or without Plugin} – Schema Optimized
+Most Popular Web Browsers in the World – Check Out
+How to Enable Gzip Compression in WordPress via .htaccess file
+
+Written by Saurabh K | August 19, 2017 | 30 Comments
+Share
+Tweet
++1
+Pin
+
+Gzip Compression reduces the size of HTML files, JavaScripts, CSS stylesheets and XML files. Generally, Enable(ing) Gzip Compression with WordPress Plugin reduces 60% to 80% size of your site. But I am Saving 35,060 Bytes using Gzip Compression in WordPress via .htaccess for technumero.com. And it is reducing webpage size by 82.2%.
+
+Enabling Gzip Compression in WordPress via .htaccess reduces Server Response Time and volume of data sent by the server to web browser. Certainly, compressed page size help reducing the transferred response and data. The best way to enable compression is, using mod_gzip or mod_deflate in WordPress .htaccess file. And the good news is, Gzip compression can be enabled by adding a simple code in WordPress .htaccess file of your website.
+
+Don’t worry if you don’t want to enable compression via .htaccess file.  Because I have also explained how to use the best plugins like W3 Total Cache, WP Super Cache to enable Gzip compression in WordPress.
+Gzip Compression in WordPress
+Gzip Compression in WordPress
+What is Gzip Compression?
+
+Gzip is a file compressor which is used for compression and decompression of the files. It gives best results compressing text files (like stylesheets, HTML and JavaScript files). When enabled on a website, Gzip compresses the files before transferring them from the server. Hence, it improves pagespeed, loading time and also saves data usage of the user. If you’re interested to know more about Gzip Compression check out these links [1, 2].
+How does it work?
+
+The concept of Gzip compression is quite easy. It uses an algorithm which organizes repeated strings in a single place only, instead of saving those same strings again and again. And it manages those strings with their location values while compression and retrieving data back from compressed files. Gzip compression works very well with stylesheets and webpages because all these resource files have many repeated strings. Because of its compression technique, Gzip may reduce the file size by 70-90%.
+Let’s have a look on the given below example to understand the Gzip Compression…
+
+Suppose if your HTML file contents following strings…
+
+<h3>Enable Gzip Compression in WordPress </h3>
+
+Then, the compressed file will look like this.
+
+Hkg6dkGhJkjsdHkgHjL
+
+But if your HTML file contents repetitive strings as following…
+
+<h3>Enable Gzip Compression in WordPress</h3>
+
+<h3>Enable Gzip Compression in WordPress via .htaccess</h3>
+
+Then, Gzip compresses the repeated strings once and uses the latter part of your HTML file.
+
+Hkg6dkGhJkjsdHkgHjL/GjDVjs
+
+If you are working on pagespeed of your WordPress site then you should apply these too:
+
+    Remove Query Strings from Static Resources to Increase your Website Speed
+    Minify JavaScript and CSS in WordPress to Increase PageSpeed
+
+DEFLATE Compression and Gzip Compression in WordPress
+
+You might have read on the web about Gzip Compression and DEFLATE compression.  If you haven’t, let me tell you about them in nutshell. Both compression algorithms (Gzip and DEFLATE) are different and used for different servers. Gzip compression is used on Apache and Nginx servers, while DEFLATE is only used on Apache servers.
+Before You Start
+
+First, you should check whether Gzip Compression is enabled or not on your WordPress site. Google Gzip compression test tool or you may use this one. If compression is already applied to your site. Then you may check if compression is enabled properly. Or is there still scope for better compression? (the technique which reduces the files size most is better).
+
+You also need to find out which web server software (Apache or Nginx) your web host is using. Because Gzip Compression method is different for both servers. You also need to figure out, how to edit WordPress .htaccess file if you are using Apache Server. Here is a detailed guide How to edit WordPress .htaccess file easily you may refer.
+Enable Gzip Compression in WordPress via .htaccess
+
+To enable Gzip Compression in WordPress via .htaccess, you only need to copy and paste given below code in WordPress .htaccess file and save changes. Now check your site on compression testing tools again. It will definitely reduce your website page size significantly and will increase page-load speed.
+Compression on Apache server
+
+        Gzip Compression – Add following code in WordPress .htaccess file of your website.
+
+# BEGIN GZIP COMPRESSION
+<IfModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+# END GZIP COMPRESSION
+    
+# BEGIN DEFLATE COMPRESSION
+<IfModule mod_filter.c>
+AddOutputFilterByType DEFLATE "application/atom+xml" \
+"application/javascript" \
+"application/json" \
+"application/ld+json" \
+"application/manifest+json" \
+"application/rdf+xml" \
+"application/rss+xml" \
+"application/schema+json" \
+"application/vnd.geo+json" \
+"application/vnd.ms-fontobject" \
+"application/x-font-ttf" \
+"application/x-javascript" \
+"application/x-web-app-manifest+json" \
+"application/xhtml+xml" \
+"application/xml" \
+"font/eot" \
+"font/opentype" \
+"image/bmp" \
+"image/svg+xml" \
+"image/vnd.microsoft.icon" \
+"image/x-icon" \
+"text/cache-manifest" \
+"text/css" \
+"text/html" \
+"text/javascript" \
+"text/plain" \
+"text/vcard" \
+"text/vnd.rim.location.xloc" \
+"text/vtt" \
+"text/x-component" \
+"text/x-cross-domain-policy" \
+"text/xml"
+</IfModule>
+# END DEFLATE COMPRESSION
