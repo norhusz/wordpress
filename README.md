@@ -1,5 +1,12 @@
 1. Start Compression – Gzip and DEFLATE
 
+	Enabling Gzip Compression in WordPress via .htaccess reduces Server Response Time
+	and volume of data sent by the server to web browser. Certainly, compressed page size
+	help reducing the transferred response and data. The best way to enable compression is,
+	using mod_gzip or mod_deflate in WordPress .htaccess file.
+	And the good news is, Gzip compression can be enabled by adding
+	a simple code in WordPress .htaccess file of your website.
+
 	
 2. Enable Keep Alive
 
