@@ -1,0 +1,13 @@
+# Add Expires Headers
+location ~* \.(jpg|jpeg|png|gif|ico|css|js|pdf|svg)$ {
+expires 365d;
+}
+location ~* \.(pdf|html|swf)$ {
+expires 90d;
+}
+
+# Add Cache-Control Headers
+location ~* \.(jpg|jpeg|png|gif|ico|css|js|pdf|svg)$ {
+expires 90d;
+add_header Cache-Control "public, no-transform";
+}
