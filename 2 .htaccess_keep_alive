@@ -1,0 +1,5 @@
+# START ENABLE KEEP ALIVE
+<ifModule mod_headers.c>
+Header set Connection keep-alive
+</ifModule>
+# END ENABLE KEEP ALIVE
