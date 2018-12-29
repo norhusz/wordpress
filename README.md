@@ -24,9 +24,10 @@
 	As a result, the website loads faster because the browser uses the already downloaded resources.
 	
 	You can Enable Leverage Browser Caching in WordPress by:
-		1. Adding Expires Headers
-    		2. Adding Cache-Control Headers and
-    		3. Turning ETags Off
+	
+	1. Adding Expires Headers
+	2. Adding Cache-Control Headers and
+	3. Turning ETags Off
 	
 4. Disable Image Hotlinking
 5. Activate mod_pagespeed
